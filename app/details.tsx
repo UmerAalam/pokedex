@@ -1,21 +1,11 @@
-import { ScrollView, StyleSheet } from "react-native";
+import { useLocalSearchParams } from "expo-router";
+import { ScrollView, Text } from "react-native";
 
 export default function Details() {
+  const params = useLocalSearchParams();
   return (
-    <ScrollView contentContainerStyle={{ gap: 16, padding: 16 }}></ScrollView>
+    <ScrollView contentContainerStyle={{ gap: 16, padding: 16 }}>
+      <Text>{params.name}</Text>
+    </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  name: {
-    fontSize: 28,
-    fontWeight: "bold",
-    textAlign: "center",
-  },
-  type: {
-    fontSize: 20,
-    fontWeight: "bold",
-    color: "gray",
-    textAlign: "center",
-  },
-});
