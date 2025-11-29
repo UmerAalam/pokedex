@@ -4,6 +4,7 @@ import { ScrollView, Image, View, Text } from "react-native";
 interface Pokemon {
   name: string;
   image: string;
+  imageBack: string;
 }
 interface PokemonList {
   count: number;
@@ -32,6 +33,7 @@ export default function Index() {
           return {
             name: pokemon.name,
             image: details.sprites.front_default,
+            imageBack: details.sprites.back_default,
           };
         }),
       );
@@ -48,6 +50,10 @@ export default function Index() {
             <Text>{pokemon.name}</Text>
             <Image
               source={{ uri: pokemon.image }}
+              style={{ width: 100, height: 100 }}
+            />
+            <Image
+              source={{ uri: pokemon.imageBack }}
               style={{ width: 100, height: 100 }}
             />
           </View>
